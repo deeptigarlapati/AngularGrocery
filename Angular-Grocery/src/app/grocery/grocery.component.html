@@ -1,0 +1,28 @@
+<div>
+    <mat-toolbar color="primary">
+        <h2> Grocery list manager </h2>
+    </mat-toolbar>
+  
+  <div *ngIf="error.length > 2" class="alert alert-danger error-msg">{{error}}</div>
+  <div class="row entry-bar">
+      <div class="col-xs-6 col-md-4">
+          <div class="input-group">
+              <input type="text" class=" form-control" placeholder="enter grocery items" id="txtSearch" [(ngModel)]="task" (keyup)="onChange()" />
+              <div class="input-group-btn">
+                  <button class="btn  check-button" type="button" (click)="onClick()">
+      <span class="glyphicon glyphicon-ok"></span>
+      </button>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <br />
+  
+      <ul class="list-group">
+          <li *ngFor="let task of tasks" class="list-group-item">
+              <span> {{ task.name }} </span>
+          </li>
+      </ul>
+  
+</div>
